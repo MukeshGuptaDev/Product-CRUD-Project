@@ -23,6 +23,7 @@ const ProductList = () => {
             <li>Name</li>
             <li>Price</li>
             <li>Category</li>
+            
             </ul>
             {
                 Products.map((item,index) =>
