@@ -28,11 +28,12 @@ const SignUp = () => {
             });
     
             console.log('Response status:', result.status);
-            const data = await result.json();
-            console.log('Response data:', data);
-            if(data)
+            result = await result.json();
+            console.log('Response data:', result);
+            if(result)
             {
-                localStorage.setItem("user",JSON.stringify(data));
+                localStorage.setItem("user",JSON.stringify(result.result));
+                localStorage.setItem("user",JSON.stringify(result.auth));
                 navigate ('/');
             }
         } catch (error) {

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate }  from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const auth = localStorage.getItem('user');
+        if(auth){
+            navigate("/"); 
+        }
+    },[])
 
     const handleLogin = async () => {
         //console.warn("email,password ",email,password);
@@ -17,8 +24,9 @@ const Login = () => {
         });
         result = await result.json();
         console.warn(result);
-        if(result.name){
-            localStorage.setItem("user",JSON.stringify(result));
+        if(result.auth){
+            localStorage.setItem("user",JSON.stringify(result.loginuser));
+            localStorage.setItem("token",JSON.stringify(result.auth));
             navigate("/"); 
 
         }else{

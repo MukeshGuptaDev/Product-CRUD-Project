@@ -48,8 +48,8 @@
 
 .button{
   margin-left: 2%;
-  padding: 10px;
-  width: 100px;
+  padding: 4px;
+  width: 103px;
   background-color: skyblue;
   border: 1px solid;
   cursor: pointer;
@@ -80,6 +80,14 @@
 .product-list ul{
   margin: 0;
 }
+
+.search-product-box{
+  width: 600px;
+  margin: 30px;
+  border: 1px solid skyblue;
+  padding-left: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -102,6 +110,7 @@
   text-align: center;
   width: 100%;
   background-color: skyblue;
+  flex-shrink: 0;
 }
 
 .App-link {
